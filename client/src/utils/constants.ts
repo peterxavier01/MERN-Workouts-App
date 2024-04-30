@@ -5,7 +5,7 @@ export const DELETE_WORKOUT = "DELETE_WORKOUT";
 let url;
 
 if (import.meta.env.DEV) {
-  url = "http://localhost:4000/api/workouts";
+  url = "http://localhost:4000/api/workouts/";
 } else if (import.meta.env.PROD) {
   url = import.meta.env.PROD_URL;
 }
