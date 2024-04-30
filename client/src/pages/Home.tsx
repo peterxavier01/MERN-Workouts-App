@@ -6,7 +6,7 @@ import WorkoutForm from "../components/WorkoutForm";
 
 import { IWorkout } from "../types";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-import { SET_WORKOUTS } from "../utils/constants";
+import url, { SET_WORKOUTS } from "../utils/constants";
 
 const Home = () => {
   const { state, dispatch } = useWorkoutsContext();
@@ -14,7 +14,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("http://localhost:4000/api/workouts");
+      const response = await fetch(url);
       const json = await response.json();
 
       if (response.ok) {

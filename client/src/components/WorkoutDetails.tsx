@@ -4,7 +4,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 import { IWorkout } from "../types";
 
-import { DELETE_WORKOUT } from "../utils/constants";
+import url, { DELETE_WORKOUT } from "../utils/constants";
 
 interface WorkoutDetailsProps {
   workout: IWorkout;
@@ -14,10 +14,7 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
   const { dispatch } = useWorkoutsContext();
 
   const handleClick = async () => {
-    const response = await fetch(
-      `http://localhost:4000/api/workouts/${workout._id}`,
-      { method: "DELETE" }
-    );
+    const response = await fetch(`${url}${workout._id}`, { method: "DELETE" });
 
     const json = await response.json();
 

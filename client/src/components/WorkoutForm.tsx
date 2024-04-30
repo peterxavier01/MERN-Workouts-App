@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
-import { CREATE_WORKOUT } from "../utils/constants";
+import url, { CREATE_WORKOUT } from "../utils/constants";
 
 const WorkoutForm = () => {
   const [title, setTitle] = useState<string>("");
@@ -18,7 +18,7 @@ const WorkoutForm = () => {
 
     const workout = { title, load, reps };
 
-    const response = await fetch("http://localhost:4000/api/workouts", {
+    const response = await fetch(url, {
       method: "POST",
       body: JSON.stringify(workout),
       headers: {
