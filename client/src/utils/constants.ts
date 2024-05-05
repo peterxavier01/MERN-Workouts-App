@@ -7,7 +7,7 @@ let url;
 if (import.meta.env.DEV) {
   url = "http://localhost:4000/api/workouts/";
 } else if (import.meta.env.PROD) {
-  url = import.meta.env.PROD_URL;
+  url = import.meta.env.VITE_PROD_URL;
 }
 
 export default url as string;
